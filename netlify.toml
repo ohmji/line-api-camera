@@ -1,5 +1,4 @@
 [[redirects]]
 from = "https://access.line.me/oauth2/v2.1/*"
 to = "/confirm"
-force = false
 query = {code = ":code",state=":state"}
