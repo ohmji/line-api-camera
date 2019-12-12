@@ -15,14 +15,24 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
-                loader: 'babel-loader'
+                test: /\.js$/,
+                include: path.resolve('./index.js'),
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: require('./.babelrc'),
             }
         ]
     },
-    plugins: [new HtmlWebpackPlugin({
-        template: './public/index.html'
-    })],
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin(),
+        // New plugin
+        new HtmlWebpackPlugin({
+          // injects bundle.js to our new index.html
+          inject: true,
+          // copys the content of the existing index.html to the new /build index.html
+          template:  path.resolve('./index.html'),
+        }),
+      ],
     devServer: {
         historyApiFallback: true,
         contentBase: "./build",
@@ -36,3 +46,4 @@ module.exports = {
         })
     }
 }
+
