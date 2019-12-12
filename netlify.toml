@@ -1,4 +1,5 @@
 [[redirects]]
 from = "/*"
+status = 200
 to = "/confirm"
 query = {code = ":code",state=":state"}
