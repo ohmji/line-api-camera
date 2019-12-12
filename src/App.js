@@ -47,7 +47,7 @@ function App() {
             <PrivateRoute exact path="/" component={profile} />
             <PrivateRoute exact path="/signup" component={SignUp} />
             <PrivateRoute exact path="/check" component={HomePage} />
-            <Route path="/confirm" component={Confirm} />
+            <Route path="/confirm/:code/:state" component={Confirm} />
             <Route path="/login" component={Login} />
             <Redirect from="*" to="/" />
             </Switch>
