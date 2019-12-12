@@ -32,7 +32,7 @@ module.exports = {
     externals: {
         // global app config object
         config: JSON.stringify({
-            apiUrl: 'https://9ecfec9c.ngrok.io'
+            apiUrl: 'https://76ea8cb5.ngrok.io'
         })
     }
 }

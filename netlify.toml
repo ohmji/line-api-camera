@@ -1,5 +1,0 @@
-[[redirects]]
-from = "/*"
-to = "/confirm"
-force = true 
-query = {code = ":code",state=":state"}
